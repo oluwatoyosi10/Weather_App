@@ -65,3 +65,17 @@ search_button.pack(pady=10)
 # Create a label widget -> to show the city/country name
 location_label = tk.Label(root, font="Helvetica, 25")
 location_label.pack(pady=20)    
+
+# Create a label widget -> to show the weather icon
+icon_label = tk.Label(root)
+icon_label.pack()
+
+# Create a label widget -> to show the temperature
+temperature_label = tk.Label(root, font="Helvetica, 20")
+temperature_label.pack()
+
+# Create a label widget -> to show the weather description
+description_label = tk.Label(root, font="Helvetica, 20")
+description_label.pack()
+
+root.mainloop()
