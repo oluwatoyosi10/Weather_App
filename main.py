@@ -35,3 +35,16 @@ def get_weather(city):
         result = get_weather(city)
         if result is None:
             return
+        # If the city is found, unpack the weather information
+    icon_url, temperature, description, city, country = result
+    location_label.configure(text=f"{city}, {country}")
+
+    # Get the weather icon image from the URL and update the icon label
+    image = Image.open(requests.get(icon_url, stream=True).raw)
+    icon = ImageTk.PhotoImage(image)
+    icon_label.configure(image=icon)
+    icon_label.image = icon
+
+    # Update the temperature and description labels
+    temperature_label.configure(text=f"Temperature: {temperature:.2f}°C")
+    description_label.configure(text=f"Description: {description}")
